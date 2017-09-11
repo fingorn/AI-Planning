@@ -101,17 +101,34 @@ class HaveCakeProblem(Problem):
 
 def have_cake():
     def get_init():
+        #original Code
+        
         pos = [expr('Have(Cake)'),
                ]
         neg = [expr('Eaten(Cake)'),
                ]
+        
+        
+#==============================================================================
+# 
+#         pos = []
+#         neg = [expr('Have(Cake)'),expr('Eaten(Cake)')]
+#==============================================================================
+        
+        
         return FluentState(pos, neg)
 
     def get_goal():
+        
         return [expr('Have(Cake)'),
                 expr('Eaten(Cake)'),
                 ]
-
+        
+#==============================================================================
+#         
+#         return [expr('Eaten(Cake)')]
+# 
+#==============================================================================
     return HaveCakeProblem(get_init(), get_goal())
 
 
